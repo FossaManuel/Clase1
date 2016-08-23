@@ -11,9 +11,9 @@
 		echo "<h2>Hola PHP soy "."$nombre</h2>";
 		echo "<br>";
 
-		$numero = rand(0,10);
+		$numero = rand(0,100);
 		//echo "<h2>$numero</h2>";
-		$veces = 10;
+		$veces = 100;
 		$cont0 = 0;
 		$cont1 = 0;
 		$cont2 = 0;
@@ -25,9 +25,9 @@
 		$cont8 = 0;
 		$cont9 = 0;
 
-		for ($veces=0; $veces <10 ; $veces++) { 
-			$numero = rand(0,10);
-			echo "$numero"."<br>";
+		for ($i=0; $i < $veces ; $i++) { 
+			$numero = rand(0,9);
+			//echo "$numero"."<br>";
 			switch ($numero) {
 				case '0':
 					$cont0++;
@@ -50,8 +50,13 @@
 					break;
 
 				case '5':
-					$cont5++;
-					break;
+					if($cont5 < 5)
+						$cont5++;
+					else
+					{
+						$i--;						
+					}
+					continue;
 
 				case '6':
 					$cont6++;
@@ -75,27 +80,18 @@
 			}
 		}
 
-		$por0 = ($cont0 * 10);
-		$por1 = ($cont1 * 10);
-		$por2 = ($cont2 * 10);
-		$por3 = ($cont3 * 10);
-		$por4 = ($cont4 * 10);
-		$por5 = ($cont5 * 10);
-		$por6 = ($cont6 * 10);
-		$por7 = ($cont7 * 10);
-		$por8 = ($cont8 * 10);
-		$por9 = ($cont9 * 10);
+		
 		echo "<br>";
-		echo "0 = %$por0<br>";
-		echo "1 = %$por1<br>";
-		echo "2 = %$por2<br>";
-		echo "3 = %$por3<br>";
-		echo "4 = %$por4<br>";
-		echo "5 = %$por5<br>";
-		echo "6 = %$por6<br>";
-		echo "7 = %$por7<br>";
-		echo "8 = %$por8<br>";
-		echo "9 = %$por9<br>";
+		echo "0 = %$cont0<br>";
+		echo "1 = %$cont1<br>";
+		echo "2 = %$cont2<br>";
+		echo "3 = %$cont3<br>";
+		echo "4 = %$cont4<br>";
+		echo "5 = %$cont5<br>";
+		echo "6 = %$cont6<br>";
+		echo "7 = %$cont7<br>";
+		echo "8 = %$cont8<br>";
+		echo "9 = %$cont9<br>";
 
 
 	?>
